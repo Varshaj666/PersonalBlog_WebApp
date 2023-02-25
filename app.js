@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://127.0.0.1:27017/personalBlogDB",()=>{
+mongoose.connect("mongodb+srv://varshaj666:test123@cluster0.v8ccul8.mongodb.net/?retryWrites=true&w=majority/personalBlogDB",()=>{
   console.log("connected to personalBlogDB");
 });
 
@@ -87,7 +87,7 @@ app.post("/compose",function(req,res){
    });
 });
 
-
+let port = process.env.PORT || 4000
 app.listen(4000, function() {
-  console.log("Server started on port 4000");
+  console.log("Server started on port" + port);
 });
