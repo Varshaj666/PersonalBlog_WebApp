@@ -1,0 +1,18 @@
+<%- include("partials/header"); -%>
+<h1>Home</h1>
+
+<p> <%= startingContent %> </p>
+<!-- We have created a varaible inside the ejs tag to display the content created in app.js using p tag HTML element  -->
+ <!-- use posts inside log enclosed with scriplettag -->
+ <!--to log posts published in compose.ejs and redirected to home page by using post method in app.js
+ , we require ejs tag to log it  -->
+
+ <% posts.forEach((iter) => {  %>
+  <h2> <%= iter.title %> </h2>
+  <p> <%= iter.content.substring(0,100)+"..." %>
+   <a href="/posts/<%=iter._id %>"> Read More</a>
+  </p>
+ <% }); %>
+<!-- We have used substring method to truncate post to 100 characters and can only been seen full content in particular requested page/posts/:postTitle -->
+ <!-- To log only key values inside array used for loop and remember for array object u have key name title and value name as content -->
+  <%- include("partials/footer"); -%>
