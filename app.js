@@ -28,7 +28,7 @@ const postSchema = {
 const Post = mongoose.model("Post", postSchema);
 //singular version of posts=>post and specify schema of repr
 
-app.get("https://personal-blog-gj1j.onrender.com/",function(req,res){
+app.get("/",function(req,res){
   Post.find({}, function(err, posts){
       res.render("home", {
         startingContent: homeStartingContent,
@@ -82,7 +82,7 @@ app.post("/compose",function(req,res){
   //post.save();
  post.save(function(err){
     if (!err){
-      res.redirect("https://personal-blog-gj1j.onrender.com/");
+      res.redirect("/");
     }
    });
 });
