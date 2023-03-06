@@ -82,7 +82,7 @@ app.post("/compose",function(req,res){
   //post.save();
  post.save(function(err){
     if (!err){
-      res.redirect("/");
+      res.redirect("https://personal-blog-gj1j.onrender.com/");
     }
    });
 });
