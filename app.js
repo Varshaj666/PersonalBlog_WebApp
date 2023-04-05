@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://varshaj666:test123@cluster0.v8ccul8.mongodb.net/?retryWrites=true&w=majority/personalBlogDB",()=>{
+mongoose.connect('mongodb+srv://varshaj666:test123@cluster0.v8ccul8.mongodb.net/?retryWrites=true&w=majority/personalBlogDB',{writeConcern: { w: 'majority', j: true, wtimeout: 1000 }},()=>{
   console.log("connected to personalBlogDB");
 });
 
